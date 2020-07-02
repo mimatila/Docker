@@ -1,2 +1,2 @@
 # Docker
-DevOps with Docker training
+DevOps with Docker training.
