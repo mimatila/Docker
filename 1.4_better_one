@@ -1,0 +1,23 @@
+sudo docker run -d devopsdockeruh/exec_bash_exercise
+
+mimatila@mimatila:~$ sudo docker exec -it sad_thompson bash
+root@52d42c3858b8:/usr/app# tail -f ./logs.txt
+Fri, 03 Jul 2020 11:13:03 GMT
+Secret message is:
+"Docker is easy"
+Fri, 03 Jul 2020 11:13:09 GMT
+Fri, 03 Jul 2020 11:13:12 GMT
+Fri, 03 Jul 2020 11:13:15 GMT
+Fri, 03 Jul 2020 11:13:18 GMT
+Secret message is:
+"Docker is easy"
+Fri, 03 Jul 2020 11:13:24 GMT
+Fri, 03 Jul 2020 11:13:27 GMT
+Fri, 03 Jul 2020 11:13:30 GMT
+^C
+root@52d42c3858b8:/usr/app# 
+
+
+
+
+
