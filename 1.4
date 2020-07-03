@@ -1,0 +1,32 @@
+sudo docker run devopsdockeruh/exec_bash_exercise
+
+mimatila@mimatila:~$ sudo docker attach --sig-proxy=false epic_gauss
+Wrote to file /usr/app/logs.txt
+^C
+mimatila@mimatila:~$ sudo docker exec -it epic_gauss bash
+
+root@780972faed65:/usr/app# ls -l
+total 16
+-rw-r--r-- 1 root root  120 Jun  3 11:49 Dockerfile
+-rw-r--r-- 1 root root   57 Jun  3 11:49 README.md
+-rw-r--r-- 1 root root 1116 Jun  3 11:49 index.js
+-rw-r--r-- 1 root root  714 Jul  3 10:57 logs.txt
+root@780972faed65:/usr/app# tail -f ./logs.txt
+Secret message is:
+"Docker is easy"
+Fri, 03 Jul 2020 10:57:33 GMT
+Fri, 03 Jul 2020 10:57:36 GMT
+Fri, 03 Jul 2020 10:57:39 GMT
+Fri, 03 Jul 2020 10:57:42 GMT
+Secret message is:
+"Docker is easy"
+Fri, 03 Jul 2020 10:57:48 GMT
+Fri, 03 Jul 2020 10:57:51 GMT
+Fri, 03 Jul 2020 10:57:54 GMT
+Fri, 03 Jul 2020 10:57:57 GMT
+Secret message is:
+"Docker is easy"
+Fri, 03 Jul 2020 10:58:03 GMT
+^C
+
+
