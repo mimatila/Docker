@@ -1,0 +1,65 @@
+mimatila@mimatila:~/Docker$ sudo docker build -t docker-clock .
+Sending build context to Docker daemon  12.29kB
+Step 1/3 : FROM devopsdockeruh/overwrite_cmd_exercise
+latest: Pulling from devopsdockeruh/overwrite_cmd_exercise
+092586df9206: Pull complete 
+ef599477fae0: Pull complete 
+4530c6472b5d: Pull complete 
+d34d61487075: Pull complete 
+87fc2710b63f: Pull complete 
+e83c771c5387: Pull complete 
+fef6195892ae: Pull complete 
+70e1a68db517: Pull complete 
+c2599bbef3cb: Pull complete 
+c5a7dd6f6ae1: Pull complete 
+446220381e79: Pull complete 
+27d5280e809c: Pull complete 
+Digest: sha256:02e38f4285d5cfaff5ed57ae67a8d99e041027da8f5c972329b46e2b7a47b7d2
+Status: Downloaded newer image for devopsdockeruh/overwrite_cmd_exercise:latest
+ ---> 3d2b622b1849
+Step 2/3 : WORKDIR /mydir
+ ---> Running in 96a6018c13a9
+Removing intermediate container 96a6018c13a9
+ ---> 3248ba285897
+Step 3/3 : CMD ["/bin/bash"]
+ ---> Running in a9894c33dff0
+Removing intermediate container a9894c33dff0
+ ---> d36390a83759
+Successfully built d36390a83759
+Successfully tagged docker-clock:latest
+
+mimatila@mimatila:~/Docker$ sudo docker images
+REPOSITORY                              TAG                 IMAGE ID            CREATED             SIZE
+docker-clock                            latest              d36390a83759        36 seconds ago      908MB
+myfirst-pluschanges                     latest              8f7a365e9428        16 hours ago        158MB
+myfirst                                 latest              8a70f84b7fb1        16 hours ago        158MB
+ubuntu                                  16.04               330ae480cb85        2 weeks ago         125MB
+ubuntu                                  xenial              330ae480cb85        2 weeks ago         125MB
+fav_distro                              xenial              74435f89ab78        2 weeks ago         73.9MB
+ubuntu                                  latest              74435f89ab78        2 weeks ago         73.9MB
+devopsdockeruh/exec_bash_exercise       latest              c52ece77379e        4 weeks ago         942MB
+devopsdockeruh/overwrite_cmd_exercise   latest              3d2b622b1849        9 months ago        908MB
+devopsdockeruh/pull_exercise            latest              d9854bc0e13a        16 months ago       75.3MB
+
+
+mimatila@mimatila:~$ sudo docker run docker-clock --clock
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+
+mimatila@mimatila:~$ sudo docker run docker-clock --adult 50
+Is over 18
+
+
+
+
