@@ -1,0 +1,20 @@
+FROM node
+WORKDIR /mydir
+ENV FRONT_URL=http://localhost:5000
+RUN apt-get update && apt-get install -y curl python
+COPY server ./server
+COPY README.md .
+COPY package-lock.json .
+COPY package.json .
+COPY config.js .
+COPY index.js .
+COPY logs.txt .
+EXPOSE 8000
+RUN curl -sL https://deb.nodesource.com/setup_10.x | bash
+RUN apt install -y nodejs
+RUN npm install
+CMD npm start
+
+
+
+

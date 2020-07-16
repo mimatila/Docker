@@ -1,0 +1,6 @@
+sudo docker build -t frontend-example-docker . 
+sudo docker build -t backend-example-docker .
+
+sudo docker run --rm -p 5000:5000 frontend-example-docker
+sudo docker run -p 8000:8000 -v $(pwd)/logs/logs.txt:/mydir/logs.txt backend-example-docker
+
