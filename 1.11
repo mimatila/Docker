@@ -1,0 +1,7 @@
+Created logs.txt file in /home/mimatila/Docker/backend-example-docker-master/logs.txt
+
+Run the container command:
+
+mimatila@mimatila:~/Docker/backend-example-docker-master$ sudo docker run -p 8000:8000 -v $(pwd)/logs/logs.txt:/mydir/logs.txt backend-example-docker
+
+
