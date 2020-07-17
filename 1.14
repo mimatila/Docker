@@ -1,0 +1,3 @@
+sudo docker build -t rails-example-project .
+
+sudo docker run -it -p 3000:3000 rails-example-project
