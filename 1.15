@@ -1,0 +1,7 @@
+Dockerhub address:
+
+https://hub.docker.com/repository/docker/mimatila/youtube-dl
+
+sudo docker build -t youtube-dl-dockerhub .
+sudo docker run -v $(pwd):/mydir youtube-dl-dockerhub https://imgur.com/JY5tHqr
+
