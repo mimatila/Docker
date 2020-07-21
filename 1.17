@@ -1,0 +1,15 @@
+Suunnitelmana oli luoda Docker container mikä ajaa itse tekemäni, SheetHelper javafx ohjelman.
+
+Tarvittavat palikat:
+
+- Ubuntu 16.04
+- Openjdk 8
+- Javafx bundle ohjelmalle SheetHelper.
+
+1.17_Dockerfile on erikseen talletettu ja siitä selviää mitä asennuksia imageen/konttiin on tehty.
+
+Komennot ko. tehtävään:
+
+- sudo docker build -t sheethelper .
+
+- sudo docker run --device /dev/dri/ --rm -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=unix$DISPLAY sheethelper
