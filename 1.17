@@ -14,3 +14,7 @@ Komennot ko. tehtävään:
   #Ennen kontin ajoa annettava komento,
 - xhost +local:root
 - sudo docker run --device /dev/dri/ --rm -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=unix$DISPLAY sheethelper
+
+Dockerhub address:
+
+https://hub.docker.com/repository/docker/mimatila/sheethelper
