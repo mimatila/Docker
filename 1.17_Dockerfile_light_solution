@@ -1,0 +1,8 @@
+FROM openjdk:8
+WORKDIR /mydir
+COPY . /mydir
+RUN apt-get update
+RUN apt-get install openjfx -y
+RUN apt-get update
+RUN apt-get install -qqy x11-apps
+CMD ./SheetHelper/SheetHelper
