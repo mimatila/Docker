@@ -1,0 +1,27 @@
+version: '3.5'  
+
+services: 
+
+    frontend: 
+      image: mimatila/frontend-example-docker 
+      ports: 
+        - 5000:5000 
+
+    backend: 
+      image: mimatila/backend-example-docker
+
+      ports: 
+        - 8000:8000
+      volumes: 
+        - ./logs/logs.txt:/mydir/logs.txt
+        
+      environment:
+        - REDIS=db
+        - REDIS_PORT=6379
+      
+    db:
+      image: mimatila/redis
+      
+     
+      
+     
