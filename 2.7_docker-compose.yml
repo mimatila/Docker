@@ -6,8 +6,6 @@ services:
       image: ml-kurkkumopo-frontend
       ports: 
         - 3000:3000 
-      environment: 
-        - API_URL=http://localhost:5000 
 
     backend: 
       image: ml-kurkkumopo-backend
@@ -15,8 +13,6 @@ services:
         - app-model:/src/model
       ports: 
         - 5000:5000
-      environment: 
-        - API_URL=http://localhost:3000
 
     training:
       image: ml-kurkkumopo-training
@@ -29,6 +25,7 @@ volumes:
   app-images:
   database:
   files:
+      
       
       
       
