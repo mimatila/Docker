@@ -8,7 +8,8 @@ RUN apk add --update curl python ca-certificates && \
            apk add --update nodejs nodejs-npm && \
            npm install && \
            apk del curl && \ 
-           rm -rf /var/lib/apt/lists/* 
+           rm -rf /var/lib/apt/lists/* && \
+           rm -rf ~/.npm/*   
 CMD npm start
 
 
