@@ -5,7 +5,8 @@ ENV API_URL=http://localhost/api
 EXPOSE 5000
 RUN  npm run build && \ 
     npm install -g serve && \
-    rm -rf /var/lib/apt/lists/*   
+    rm -rf /var/lib/apt/lists/* && \
+    rm -rf ~/.npm/*   
 CMD serve -s -l 5000 dist
 
 
