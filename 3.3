@@ -1,6 +1,15 @@
 Harjoitus 3.3 idea:
 
-Ao. ssh scriptillä(./mika.sh) kloonataan repo lokaali levylle ja buildataan image joka siirretään DockerHubiin.
+Ao. ssh scripteillä(./mika2.sh) kloonataan repo lokaali levylle ja buildataan image joka siirretään DockerHubiin.
+mika2.sh ajaa skriptin ./mika.sh ja sen jälkeen sudo docker run -it --rm -p 5000:5000 frontend_ssh
+
+mika2.sh:
+
+#/bin/bash
+./mika.sh
+sudo docker run -it --rm -p 5000:5000 mimatila/frontend_ssh
+
+mika.sh:
 
 #/bin/bash
 repository="git@github.com:mimatila/docker-frontend-youtube-3.3.git"
@@ -11,7 +20,3 @@ sudo docker build -t frontend_ssh .
 sudo docker tag frontend_ssh:latest mimatila/frontend_ssh
 sudo docker login
 sudo docker push mimatila/frontend_ssh
-
-Tämän jälkeen image ajetaan seuraavalla komennolla:
-
-docker run -ti /3.3/mimatila/frontend_ssh /mika.sh abc
