@@ -10,21 +10,20 @@ ja tämän jälkeen ajetaan konttia scriptillä(./frontend_ssh_run.sh).
 frontend_ssh_hub.sh:
 
 #/bin/bash
-sudo rm -rf /home/mimatila/Docker/3.3/{.*,/*}
+sudo -S <<< "olli70" rm -rf /home/mimatila/Docker/3.4/{.*,/*}
 repository="git@github.com:mimatila/docker-frontend-youtube-3.3.git"
-localFolder="/home/mimatila/Docker/3.3"
+localFolder="/home/mimatila/Docker/3.4"
 git clone "$repository" "$localFolder"
 cd 3.4
-sudo docker build -t frontend_ssh .
-sudo docker tag frontend_ssh:latest mimatila/frontend_ssh
-sudo docker login
-sudo docker push mimatila/frontend_ssh
+sudo -S <<< "olli70" docker build -t frontend_ssh .
+sudo -S <<< "olli70" docker tag frontend_ssh:latest mimatila/frontend_ssh
+sudo -S <<< "olli70" docker login
+sudo -S <<< "olli70" docker push mimatila/frontend_ssh
 
 
 frontend_ssh_run.sh:
 
 #/bin/bash
-sudo rm -rf /home/mimatila/Docker/3.3/{.*,/*}
-./frontend_ssh_hub.sh
-sudo docker run -it --rm -p 5000:5000 mimatila/frontend_ssh
-
+sudo -S <<< "olli70" rm -rf /home/mimatila/Docker/3.4/{.*,/*}
+./mika.sh
+sudo -S <<< "olli70" docker run -it --rm -p 5000:5000 mimatila/frontend_ssh
