@@ -1,28 +1,17 @@
 Harjoitus 3.3 idea:
 
-- Käytetään Github repositorya, CircleCItä ja DockerHubia.
-- Ekana luodaan Githubin Dockerfilestä frontend image johon on asennettu docker cli ja lisätty hakemisto youtube, jossa on sen Dockerfile.
-- Kun käynnistetään docker-frontend-youtube-3.3 ohjelma watchtowerin kanssa. Samalla Buildataan
-komennoilla youtube image kontissa(docker build -t youtube-dl .) ja ajetaan se(docker run youtube-dl https://imgur.com/JY5tHqr).
+Ao. ssh scriptillä(./mika.sh) kloonataan repo lokaali levylle ja buildataan image joka siirretään DockerHubiin.
 
-Image on talletettu Dockerhubiin ja CircleCI valvoo muutoksia Githubista. Muutosta pollataan
-5 minuutin välein watchtowerin puolesta ja kontti päivitetään.
+#/bin/bash
+repository="git@github.com:mimatila/docker-frontend-youtube-3.3.git"
+localFolder="/home/mimatila/Docker/3.4"
+git clone "$repository" "$localFolder"
+cd 3.4
+sudo docker build -t frontend_ssh .
+sudo docker tag frontend_ssh:latest mimatila/frontend_ssh
+sudo docker login
+sudo docker push mimatila/frontend_ssh
 
-https://github.com/mimatila/docker-frontend-youtube-3.3
+Tämän jälkeen image ajetaan seuraavalla komennolla:
 
-config.yml:
-
-version: "3"
-services:
-  frontend:
-    image: mimatila/docker-frontend-youtube-3.3
-    volumes:        
-      - /var/run/docker.sock:/var/run/docker.sock
-    ports:
-      - 5000:5000
-    container_name: frontend
-  watchtower:
-    image: containrrr/watchtower
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-    container_name: watchtower
+docker run -ti /3.3/mimatila/frontend_ssh /mika.sh abc
