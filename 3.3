@@ -6,6 +6,7 @@ ja tämän jälkeen ajetaan konttia scriptillä(./frontend_ssh_run.sh).
 frontend_ssh_hub.sh:
 
 #/bin/bash
+sudo rm -r /home/mimatila/Docker/3.4/*
 repository="git@github.com:mimatila/docker-frontend-youtube-3.3.git"
 localFolder="/home/mimatila/Docker/3.4"
 git clone "$repository" "$localFolder"
@@ -14,10 +15,12 @@ sudo docker build -t frontend_ssh .
 sudo docker tag frontend_ssh:latest mimatila/frontend_ssh
 sudo docker login
 sudo docker push mimatila/frontend_ssh
-sudo docker run -it --rm -p 5000:5000 mimatila/frontend_ssh
+
 
 frontend_ssh_run.sh:
 
 #/bin/bash
+sudo rm -r /home/mimatila/Docker/3.4/*
 ./frontend_ssh_hub.sh
 sudo docker run -it --rm -p 5000:5000 mimatila/frontend_ssh
+
