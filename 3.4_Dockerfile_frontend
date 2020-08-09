@@ -9,13 +9,8 @@ apt install -y nodejs && \
 npm install && \
 npm run build && \
 npm install -g serve  && \ 
-addgroup mika && \
-useradd -m app && \
-chgrp mika /mydir && \
-chown -R app:app /mydir && \
-USER app 
+addgroup matilainen && \
+useradd -m mika && \
+chown -R mika:matilainen /mydir && \
+USER mika
 CMD serve -s -l 5000 dist
-
-
-
-
