@@ -10,6 +10,6 @@ npm install && \
 addgroup matilainen && \
 useradd -m mika && \
 usermod -a -G matilainen mika && \
-chown -R mika:matilainen ./ && \
+chown -R mika:matilainen ./
 USER mika
 CMD npm start
