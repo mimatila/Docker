@@ -9,7 +9,7 @@ apt install -y nodejs && \
 npm install && \
 npm run build && \
 npm install -g serve  && \ 
-addgroup matilainen && \
+groupadd matilainen && \
 useradd -m mika && \
 usermod -a -G matilainen mika && \
 chown -R mika:matilainen /mydir
