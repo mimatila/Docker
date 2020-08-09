@@ -9,6 +9,6 @@ apt install -y nodejs && \
 npm install && \
 groupadd matilainen && \
 useradd -G matilainen mika && \
-chown -R mika:matilainen ./
+chown -R mika ./
 USER mika
 CMD npm start
