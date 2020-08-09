@@ -9,7 +9,7 @@ apt install -y nodejs && \
 npm install && \
 addgroup matilainen && \
 useradd -m mika && \
+usermod -a -G matilainen mika && \
 chown -R mika:matilainen ./ && \
-chmod 777 ./node_modules/ 
 USER mika
 CMD npm start
