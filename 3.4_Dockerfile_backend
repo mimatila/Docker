@@ -8,8 +8,7 @@ curl -sL https://deb.nodesource.com/setup_10.x | bash && \
 apt install -y nodejs && \
 npm install && \
 groupadd -g matilainen && \
-useradd -m mika && \
-usermod -a -G matilainen mika && \
+useradd -g matilainen mika && \
 chown -R mika:matilainen ./
 USER mika
 CMD npm start
