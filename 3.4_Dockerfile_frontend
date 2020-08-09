@@ -11,6 +11,6 @@ npm run build && \
 npm install -g serve  && \ 
 groupadd matilainen && \
 useradd -G matilainen mika && \
-chown -R mika:matilainen /mydir
+chown -R mika /mydir
 USER mika
 CMD serve -s -l 5000 dist
