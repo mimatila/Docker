@@ -1,0 +1,19 @@
+FROM node
+WORKDIR /mydir
+ENV FRONT_URL=http://localhost:80
+COPY . .
+EXPOSE 8000
+RUN apt-get update && apt-get install -y curl python && \
+curl -sL https://deb.nodesource.com/setup_10.x | bash && \
+apt install -y nodejs && \
+npm install && \
+addgroup mika && \
+useradd -m app && \
+chown -R app:app ./ && \
+chmod 777 ./node_modules/ 
+USER app 
+CMD npm start
+
+
+
+
