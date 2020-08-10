@@ -7,13 +7,7 @@ RUN apt-get update && apt-get install -y curl python && \
 curl -sL https://deb.nodesource.com/setup_10.x | bash && \
 apt install -y nodejs && \
 npm install && \
-groupadd matilainen && \
-useradd -G matilainen mika && \
+useradd -m mika && \
 chown -R mika ./
 USER mika
 CMD npm start
-
-
-
-
-
