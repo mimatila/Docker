@@ -9,8 +9,7 @@ apt install -y nodejs && \
 npm install && \
 npm run build && \
 npm install -g serve  && \ 
-groupadd matilainen && \
-useradd -G matilainen mika && \
+useradd -m mika && \
 chown -R mika ./
 USER mika
 CMD serve -s -l 5000 dist
