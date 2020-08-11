@@ -1,3 +1,0 @@
-FROM frontend-build-stage
-FROM frontend_node
-COPY --from= frontend-build-stage /mydir/dist/ /mydir/dist
