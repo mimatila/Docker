@@ -1,0 +1,3 @@
+FROM frontend-build-stage
+FROM node
+COPY --from=frontend-build-stage /mydir/ /mydir
