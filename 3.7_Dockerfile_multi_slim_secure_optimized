@@ -22,6 +22,6 @@ apk del curl && \
 rm -rf /var/lib/apt/lists/* && \
 rm -rf ~/.npm/*   
 COPY --from=build-stage /mydir/dist/ /mydir/dist 
-USER mika
 RUN npm install -g serve 
+USER mika
 CMD serve -s -l 5000 dist
