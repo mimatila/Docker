@@ -1,0 +1,8 @@
+Tehtävä 3.7:
+
+Frontend project with multi-stage and non root user, using node-alpine image and optimizing with file deletions.
+
+REPOSITORY                              TAG                 IMAGE ID            CREATED             SIZE
+frontend-multi-stage-slim               latest              efc471a456ff        16 seconds ago       212MB
+frontend_node                           latest              b88f721b88dc        2 days ago          1.29GB
+
