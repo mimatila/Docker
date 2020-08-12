@@ -1,0 +1,29 @@
+FROM node:alpine as build-stage
+WORKDIR /mydir
+COPY . .
+RUN npm install && \
+npm run build
+FROM node:alpine
+WORKDIR /mydir
+COPY dist ./dist
+COPY README.md .
+COPY webpack.config.js .
+COPY package-lock.json .
+COPY package.json .
+COPY config.js .
+ENV API_URL=http://localhost/api
+EXPOSE 5000
+RUN apk add --no-cache libc6-compat && \
+apk add --update npm && \
+apk add --update curl python ca-certificates && \
+apk --no-cache add curl  && \
+addgroup -S matilainen && adduser -S mika -G matilainen && \
+chown -R mika ./ && \
+apk del curl && \ 
+rm -rf /var/lib/apt/lists/* && \
+rm -rf ~/.npm/*   
+COPY --from=build-stage /mydir/dist/ /mydir/dist 
+USER mika
+RUN npm install -g serve 
+CMD serve -s -l 5000 dist
+
